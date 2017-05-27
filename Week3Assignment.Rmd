@@ -1,0 +1,34 @@
+---
+title: "Developing Data Products  Week 3 Assignment"
+author: "Lavanya Viswanathan"
+date: "May 27, 2017"
+output: 
+  ioslides_presentation: 
+    keep_md: yes
+runtime: shiny
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Plotly Demonstration
+
+This presentation demonstrates the use of interactive plots in an R presentation using Plotly
+
+To learn more, see [the Plotly website](https://plot.ly/).
+
+## Interactive Time Series 
+
+A time line of the number of "great" inventions and scientific discoveries per year between 1860 and 1959
+
+```{r stocks, echo=FALSE, message=FALSE, warning=FALSE}
+library(plotly)
+library(tidyr)
+library(dplyr)
+data("discoveries")
+plot_ly(x = ~time(discoveries), y = ~discoveries, 
+        type = "scatter", mode = "lines")
+```
+
+
